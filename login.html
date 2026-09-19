@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cutie Media - Login</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd);
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: white;
+            width: 350px;
+            max-width: 85%;
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px #0002;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #ff4f81;
+            margin-bottom: 10px;
+        }
+
+        .welcome {
+            color: #666;
+            font-size: 18px;
+        }
+
+        input {
+            width: 90%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 2px solid #ffb6c9;
+            border-radius: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            display: block;
+            width: 90%;
+            padding: 13px;
+            margin: 20px auto;
+            border-radius: 25px;
+            background: #ff4f81;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .login-button:hover {
+            background: #7b61ff;
+        }
+
+        .signup {
+            color: #555;
+        }
+
+        .signup a {
+            color: #7b61ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            color: #ff4f81;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="login-box">
+
+        <!-- Cutie Media Icon -->
+
+        <img
+            src="cutie-media-icon.png"
+            alt="Cutie Media"
+            class="icon"
+        >
+
+        <h1>🌈 Cutie Media</h1>
+
+        <p class="welcome">
+            ✨ Welcome back! ✨
+        </p>
+
+
+        <!-- Username -->
+
+        <input
+            type="text"
+            placeholder="👤 Username"
+        >
+
+
+        <!-- Password -->
+
+        <input
+            type="password"
+            placeholder="🔒 Password"
+        >
+
+
+        <!-- Login -->
+
+        <a
+            href="home.html"
+            class="login-button"
+        >
+            🔐 Login
+        </a>
+
+
+        <!-- Sign Up -->
+
+        <p class="signup">
+
+            Don't have an account?
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </p>
+
+
+        <!-- Back -->
+
+        <a
+            href="index.html"
+            class="back"
+        >
+            ← Back to Home
+        </a>
+
+    </div>
+
+</body>
+
+</html>

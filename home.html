@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cutie Media - Home</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- TOP HEADER -->
+
+<header class="mobile-header">
+
+    <h1>🌈 Cutie Media</h1>
+
+   <div class="header-icons">
+       🔍 💌 <button
+onclick="showNotifications()">🔔</button>
+</div>
+
+</header>
+
+
+<!-- DESKTOP NAVIGATION -->
+
+<nav class="desktop-nav">
+
+    <a href="home.html">🏠 Home</a>
+    <a href="reels.html">🎬 Reels</a>
+    <a href="chat.html">💬 Chat</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="order.html">🛍️ Orders</a>
+
+</nav>
+
+
+<main class="social-home">
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <h2 id="homeWelcome">
+            👋 Welcome!
+        </h2>
+
+        <p id="homeWelcomeUsername">
+            @username
+        </p>
+
+    </section>
+
+
+
+    <!-- STORIES -->
+
+    <section class="stories">
+
+        <div class="story">
+
+            <img src="cutie-media-icon.png"
+                 alt="Your profile">
+
+            <span>You</span>
+
+        </div>
+
+
+        <div class="story">
+
+            <div class="story-circle">
+                🌸
+            </div>
+
+            <span>Story</span>
+
+        </div>
+
+
+        <div class="story">
+
+            <div class="story-circle">
+                🦋
+            </div>
+
+            <span>Story</span>
+
+        </div>
+
+
+        <div class="story">
+
+            <div class="story-circle">
+                🐰
+            </div>
+
+            <span>Story</span>
+
+        </div>
+
+
+        <div class="story">
+
+            <div class="story-circle">
+                🌈
+            </div>
+
+            <span>Story</span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CREATE POST -->
+
+    <section class="create-post">
+
+        <div class="create-top">
+
+            <img src="cutie-media-icon.png"
+                 alt="Your profile">
+
+            <textarea
+                id="postText"
+                placeholder="What's on your mind? 💭">
+            </textarea>
+            <br>
+
+            <input
+                type="file"
+                id="postPhoto"
+                accept="image/*">
+
+        </div>
+
+
+        <button onclick="createPost()">
+            📤 Post
+        </button>
+
+    </section>
+
+
+
+    <!-- POSTS -->
+
+    <div id="posts">
+
+
+        <!-- SAMPLE POST -->
+
+        <article class="social-post">
+
+
+            <div class="post-header">
+
+                <img src="cutie-media-icon.png"
+                     alt="Profile">
+
+
+                <div>
+
+                    <strong id="postUserName">
+                        👤 User
+                    </strong>
+
+                    <small id="postUsername">
+                        @username · Just now
+                    </small>
+
+                </div>
+
+
+                <span class="more">
+                    •••
+                </span>
+
+            </div>
+
+
+            <p class="post-text">
+
+                Welcome to Cutie Media! 👋💗
+
+            </p>
+
+
+            <div class="post-actions">
+
+                <button onclick="likePost(this)">
+                    ❤️ Like <span class="like-count">0</span>
+                </button>
+
+
+                <button onclick="showCommentPost(this)">
+                    💬 Comment
+                </button>
+
+
+                <button>
+                    📤 Share
+                </button>
+
+            </div>
+
+            <!-- PUT THE COMMENT BOX HERE -->
+
+            <div class="comment-input-box">
+
+               <img src="cutie-media-icon.png"
+                    class="comment-input-photo"
+                    alt="Profile">
+
+                <input
+                     type="text"
+                     class="comment-input"
+                     placeholder="Write a comment...">
+
+                <button onclick="sendComment(this)">
+        ➤
+                </button>
+
+</div>
+
+
+        </article>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="home.html">
+
+        🏠
+        <span>Home</span>
+
+    </a>
+
+
+    <a href="reels.html">
+
+        🎬
+        <span>Reels</span>
+
+    </a>
+
+
+    <a href="chat.html">
+
+        💬
+        <span>Chat</span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        👤
+        <span>Profile</span>
+
+    </a>
+
+</nav>
+
+
+
+<footer>
+
+    💗 Cutie Media
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

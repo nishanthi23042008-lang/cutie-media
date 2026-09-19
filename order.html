@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie Media - Shop</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .product {
+            background: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #0002;
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .product h3 {
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .rating {
+            color: #f5a623;
+        }
+
+        .product button {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .cart-button {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        @media(max-width:600px) {
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🛍️ Cutie Media Shop</h1>
+    <p>✨ Shop • Add to Cart • Buy Now ✨</p>
+</header>
+
+<nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="reels.html">🎬 Reels</a>
+    <a href="chat.html">💬 Chat</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="order.html">🛍️ Shop</a>
+</nav>
+
+<main>
+
+    <button class="cart-button" onclick="showCart()">
+        🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+
+    <h2>🔥 Products</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1">
+            <h3>👗 Dress</h3>
+            <div class="rating">⭐ 4.5</div>
+            <p class="price">₹799</p>
+            <button onclick="addToCart('Dress',799)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('Dress',799)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+            <h3>👕 T-Shirt</h3>
+            <div class="rating">⭐ 4.4</div>
+            <p class="price">₹499</p>
+            <button onclick="addToCart('T-Shirt',499)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('T-Shirt',499)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+            <h3>👟 Sneakers</h3>
+            <div class="rating">⭐ 4.6</div>
+            <p class="price">₹1,499</p>
+            <button onclick="addToCart('Sneakers',1499)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('Sneakers',1499)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62">
+            <h3>🎒 Backpack</h3>
+            <div class="rating">⭐ 4.5</div>
+            <p class="price">₹899</p>
+            <button onclick="addToCart('Backpack',899)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('Backpack',899)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+            <h3>🎧 Headphones</h3>
+            <div class="rating">⭐ 4.3</div>
+            <p class="price">₹1,299</p>
+            <button onclick="addToCart('Headphones',1299)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('Headphones',1299)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+            <h3>⌚ Smart Watch</h3>
+            <div class="rating">⭐ 4.2</div>
+            <p class="price">₹1,999</p>
+            <button onclick="addToCart('Smart Watch',1999)">
+                🛒 Add to Cart
+            </button>
+            <button onclick="buyNow('Smart Watch',1999)">
+                ⚡ Buy Now
+            </button>
+        </div>
+
+    </div>
+
+
+    <div id="cartBox" class="post-box">
+
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cartItems">
+            Cart is empty.
+        </div>
+
+        <h3 id="cartTotal">
+            Total: ₹0
+        </h3>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

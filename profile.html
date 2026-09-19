@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cutie Media - Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff8fab;
+        }
+
+        .photo-button {
+            display: inline-block;
+            padding: 10px 18px;
+            margin: 10px;
+            border-radius: 20px;
+            background: #7b61ff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #photoInput {
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<header>
+
+    <h1 id="profileTitle">Profile</h1>
+
+    <p>✨ Welcome to my profile ✨</p>
+
+</header>
+
+
+<nav>
+
+    <a href="home.html">🏠 Home</a>
+
+    <a href="reels.html">🎬 Reels</a>
+
+    <a href="chat.html">💬 Chat</a>
+
+    <a href="profile.html">👤 Profile</a>
+
+    <a href="order.html">🛍️ Orders</a>
+
+</nav>
+
+
+<main>
+
+
+    <!-- PROFILE -->
+
+    <div class="profile-card">
+
+
+        <!-- Profile Picture -->
+
+        <img
+            id="profilePicture"
+            src="cutie-media-icon.png"
+            alt="Profile Picture"
+            class="profile-picture"
+        >
+
+
+        <br>
+
+
+        <!-- Change Photo -->
+
+        <label
+            for="photoInput"
+            class="photo-button"
+        >
+            📷 Change Photo
+        </label>
+
+
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+            onchange="changeProfilePicture(event)"
+        >
+
+
+        <!-- Name -->
+
+        <h2 id="profileName">
+            Your Name
+        </h2>
+
+
+        <p id="profileUsername">
+            @username
+        </p>
+
+
+        <p>
+            ✨ Welcome to my Cutie Media profile! ✨
+        </p>
+
+
+        <!-- Edit Profile -->
+
+       <button
+        onclick="document.getElementById('editProfileBox').style.display='block'">
+    ✏️ Edit Profile
+</button>
+
+
+    </div>
+
+
+    <!-- PROFILE STATS -->
+
+    <div class="profile-stats">
+
+        <div>
+
+            <h3>0</h3>
+
+            <p>Posts</p>
+
+        </div>
+
+
+        <div>
+
+            <h3>0</h3>
+
+            <p>Followers</p>
+
+        </div>
+
+
+        <div>
+
+            <h3>0</h3>
+
+            <p>Following</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MY POSTS -->
+
+    <div class="post-box">
+
+        <h2>📝 My Posts</h2>
+
+        <p>
+            No posts yet.
+        </p>
+
+    </div>
+
+    <!-- EDIT PROFILE BOX -->
+
+<div id="editProfileBox" class="edit-profile-box">
+
+    <h2>✏️ Edit Profile</h2>
+
+    <label>👤 Name</label>
+    <input type="text" id="editName" placeholder="Enter your name">
+
+    <label>📝 Bio</label>
+    <textarea id="editBio" placeholder="Write your bio"></textarea>
+
+    <button onclick="saveProfile()">💾 Save</button>
+
+    <button onclick="closeEditProfile()">❌ Cancel</button>
+
+</div>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

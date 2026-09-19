@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie Media - Reels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🎬 Cutie Media Reels</h1>
+    <p>✨ Watch • Upload • Share ✨</p>
+</header>
+
+<nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="reels.html">🎬 Reels</a>
+    <a href="chat.html">💬 Chat</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="order.html">🛍️ Orders</a>
+</nav>
+
+<main>
+
+    <div class="post-box">
+        <h2>📤 Upload Reel</h2>
+
+        <input type="file" id="reelVideo" accept="video/*">
+
+        <br><br>
+
+        <button onclick="uploadReel()">
+            🎬 Upload
+        </button>
+    </div>
+
+    <h2>🎥 Reels</h2>
+
+    <div id="reelsContainer">
+        <p>No reels uploaded yet.</p>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

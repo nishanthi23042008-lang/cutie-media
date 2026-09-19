@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie Media - Notification Settings</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .settings-box {
+            background: white;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #0002;
+        }
+
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .setting:last-child {
+            border-bottom: none;
+        }
+
+        .setting-text strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .setting-text small {
+            color: #888;
+        }
+
+        .toggle {
+            width: 45px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .save-button {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔔 Notification Settings</h1>
+    <p>✨ Control your notifications ✨</p>
+</header>
+
+<nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="reels.html">🎬 Reels</a>
+    <a href="chat.html">💬 Chat</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="order.html">🛍️ Shop</a>
+</nav>
+
+<main>
+
+    <div class="settings-box">
+
+        <h2>🔔 Notifications</h2>
+
+        <div class="setting">
+            <div class="setting-text">
+                <strong>❤️ Likes</strong>
+                <small>When someone likes your post</small>
+            </div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="setting">
+            <div class="setting-text">
+                <strong>💬 Comments</strong>
+                <small>When someone comments on your post</small>
+            </div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="setting">
+            <div class="setting-text">
+                <strong>📩 Messages</strong>
+                <small>When you receive a new message</small>
+            </div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="setting">
+            <div class="setting-text">
+                <strong>🛍️ Orders</strong>
+                <small>Updates about your orders</small>
+            </div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="setting">
+            <div class="setting-text">
+                <strong>👥 Followers</strong>
+                <small>When someone follows you</small>
+            </div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <button class="save-button" onclick="saveNotificationSettings()">
+            💾 Save Settings
+        </button>
+
+    </div>
+
+</main>
+
+<script>
+function saveNotificationSettings() {
+
+    const settings = [];
+
+    document.querySelectorAll(".toggle").forEach(function(toggle) {
+        settings.push(toggle.checked);
+    });
+
+    localStorage.setItem(
+        "notificationSettings",
+        JSON.stringify(settings)
+    );
+
+    alert("✅ Notification settings saved!");
+}
+</script>
+
+</body>
+</html>

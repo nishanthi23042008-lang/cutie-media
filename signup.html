@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cutie Media - Create Account</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #ff9a9e,
+                #fad0c4,
+                #a1c4fd
+            );
+            min-height: 100vh;
+            padding: 25px 10px;
+        }
+
+        .signup-box {
+            background: white;
+            width: 450px;
+            max-width: 100%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px #0003;
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 42px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4f81;
+            margin: 5px 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #7b61ff;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .photo-preview {
+            display: block;
+            width: 110px;
+            height: 110px;
+            margin: 15px auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff8fab;
+        }
+
+        .create-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4f81;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .create-button:hover {
+            background: #7b61ff;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #7b61ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .privacy-info {
+            background: #f7f3ff;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="signup-box">
+
+
+    <div class="logo">
+        🌈
+    </div>
+
+
+    <h1>Cutie Media</h1>
+
+
+    <p class="subtitle">
+        ✨ Create your account ✨
+    </p>
+
+
+
+    <!-- BASIC INFORMATION -->
+
+    <h2 class="section-title">
+        👤 Account Information
+    </h2>
+
+
+    <label>
+        Display Name
+    </label>
+
+    <input
+        type="text"
+        id="displayName"
+        placeholder="Your display name"
+    >
+
+
+    <label>
+        Username
+    </label>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="@username"
+    >
+
+
+    <label>
+        📷 Profile Photo
+    </label>
+
+    <input
+        type="file"
+        id="profilePhoto"
+        accept="image/*"
+    >
+
+
+    <img
+        id="photoPreview"
+        class="photo-preview"
+        src="cutie-media-icon.png"
+        alt="Profile photo preview"
+    >
+
+
+
+    <!-- PROFILE -->
+
+    <h2 class="section-title">
+        ✨ Your Profile
+    </h2>
+
+
+    <label>
+        📝 Bio
+    </label>
+
+    <textarea
+        id="bio"
+        placeholder="Tell people about yourself"
+    ></textarea>
+
+
+    <label>
+        🎨 Interests
+    </label>
+
+    <input
+        type="text"
+        id="interests"
+        placeholder="Music, dance, coding..."
+    >
+
+
+
+    <!-- PRIVACY -->
+
+    <h2 class="section-title">
+        🔐 Privacy
+    </h2>
+
+
+    <label>
+        Account Privacy
+    </label>
+
+    <select id="privacy">
+
+        <option value="public">
+            🌎 Public Account
+        </option>
+
+        <option value="private">
+            🔒 Private Account
+        </option>
+
+    </select>
+
+
+    <div class="privacy-info">
+
+        🌎 <b>Public:</b>
+        Other users can discover your profile.
+
+        <br><br>
+
+        🔒 <b>Private:</b>
+        Your profile and posts can be restricted
+        to approved followers.
+
+    </div>
+
+
+
+    <!-- CREATE -->
+
+    <button
+        class="create-button"
+        onclick="createAccount()"
+    >
+        ✨ Create My Account
+    </button>
+
+
+    <a
+        href="login.html"
+        class="login-link"
+    >
+        Already have an account? 🔐 Login
+    </a>
+
+
+</div>
+
+
+
+<script>
+
+const profilePhoto =
+    document.getElementById("profilePhoto");
+
+const photoPreview =
+    document.getElementById("photoPreview");
+
+
+/* PROFILE PHOTO PREVIEW */
+
+profilePhoto.addEventListener("change", function () {
+
+    const file = profilePhoto.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+
+        photoPreview.src =
+            event.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+
+/* CREATE ACCOUNT */
+
+function createAccount() {
+
+    const displayName =
+        document.getElementById("displayName")
+        .value
+        .trim();
+
+    const username =
+        document.getElementById("username")
+        .value
+        .trim()
+        .replace(/^@/, "");
+
+    const bio =
+        document.getElementById("bio")
+        .value
+        .trim();
+
+    const interests =
+        document.getElementById("interests")
+        .value
+        .trim();
+
+    const privacy =
+        document.getElementById("privacy")
+        .value;
+
+
+    /* CHECK REQUIRED INFORMATION */
+
+    if (
+        displayName === "" ||
+        username === ""
+    ) {
+
+        alert(
+            "⚠️ Please enter your display name and username."
+        );
+
+        return;
+    }
+
+/* SAVE ACCOUNT INFORMATION */
+
+const account = {
+    name: displayName,
+    username: username,
+    bio: bio,
+    interests: interests,
+    privacy: privacy
+};
+
+localStorage.setItem(
+    "cutieAccount",
+    JSON.stringify(account)
+);
+
+    /* SAVE PROFILE PHOTO */
+
+    const file =
+        profilePhoto.files[0];
+
+    if (file) {
+
+        const reader =
+            new FileReader();
+
+        reader.onload = function (event) {
+
+            localStorage.setItem(
+                "cutieProfilePhoto",
+                event.target.result
+            );
+
+            finishAccountCreation();
+
+        };
+
+        reader.readAsDataURL(file);
+
+    } else {
+
+        finishAccountCreation();
+
+    }
+
+}
+
+
+
+function finishAccountCreation() {
+
+    alert(
+        "🎉 Welcome to Cutie Media, " +
+        localStorage.getItem("cutieName") +
+        "!"
+    );
+
+
+    window.location.href =
+        "profile.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

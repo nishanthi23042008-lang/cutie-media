@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cutie Media - Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>💬 Cutie Media</h1>
+    <p>Private Messages 🔒</p>
+</header>
+
+<nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="reels.html">🎬 Reels</a>
+    <a href="chat.html">💬 Chat</a>
+    <a href="profile.html">👤 Profile</a>
+</nav>
+
+<main>
+
+    <div class="post-box">
+
+        <h2>🔎 Find a user</h2>
+
+        <input
+            type="text"
+            id="chatUser"
+            placeholder="Enter username">
+
+        <button onclick="openChat(
+            document.getElementById('chatUser').value
+        )">
+            💬 Chat
+        </button>
+
+    </div>
+
+    <div class="post-box">
+
+        <h2 id="chatWith">💬 Select a user</h2>
+
+        <div id="messages"></div>
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Message...">
+
+        <button onclick="sendMessage()">📤</button>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
